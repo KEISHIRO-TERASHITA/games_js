@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+  <title>脳トレゲーム</title>
+</head>
+<body>
+  <header class="header">
+    <img src="../img/posseLogo.png" alt="" class="header_logo">
+    <div class="header_menu">
+      <section class="header_menu_bar"></section>
+      <section class="header_menu_bar"></section>
+      <section class="header_menu_bar"></section>
+    </div>
+  </header>
+  <main class="main">
+    <section class="gameArea">
+      <h1>脳トレゲーム</h1>
+      <p>表示された条件に合うものを選んでクリック！</p>
+      <p>制限時間30秒だよ</p>
+      <p id="rule">startを押してね</p>
+      <table id="board">
+        <tr>
+          <td id="cell_0" class="cell no_event"></td>
+          <td id="cell_1" class="cell no_event"></td>
+          <td id="cell_2" class="cell no_event"></td>
+        </tr>
+        <tr>
+          <td id="cell_3" class="cell no_event"></td>
+          <td id="cell_4" class="cell no_event"></td>
+          <td id="cell_5" class="cell no_event"></td>
+        </tr>
+      </table>
+
+      <br>
+      <br>
+      <button id="start">start !</button>
+      <p id="messageArea"></p>
+    </section>
+  </main>
+</body>
+</html>
