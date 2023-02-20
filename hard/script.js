@@ -9,12 +9,10 @@ const rules = {
   青: "青という文字",
   緑: "緑という文字",
   黒: "黒という文字",
-  large: "大きい文字",
-  mid: "中間サイズの文字",
-  small: "小さい文字",
 };
 
 let isCorrect = "";
+let randomClasses;
 
 const cells = document.querySelectorAll(".cell");
 const startButton = document.getElementById("start");
@@ -81,8 +79,16 @@ function showLetters() {
     shown.push(shuffledLetters[index]);
   });
   // クラスつける
-  addRandomClass(targets, colors);
-  addRandomClass(targets, size);
+  randomClasses = shuffle(colors);
+  targets.forEach((target, index) => {
+    target.classList.add(randomClasses[index]);
+    shown.push(randomClasses[index]);
+  });
+  randomClasses = shuffle(size);
+  targets.forEach((target, index) => {
+    target.classList.add(randomClasses[index]);
+  });
+
 }
 
 // 指示だし
