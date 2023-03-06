@@ -84,10 +84,9 @@ function showLetters() {
 
 // 指示だし
 function showRule() {
-  const index = choseFrom(shown);
-  rule = rules[index];
+  isCorrect = choseFrom(shown);
+  rule = rules[isCorrect];
   ruleArea.innerHTML = rule;
-  isCorrect = index;
 }
 
 // リセット
