@@ -11,18 +11,18 @@ const rules = {
   黒: "黒という文字",
 };
 
-let isCorrect = "";
+let isCorrect;
 let randomClasses;
 
 const cells = document.querySelectorAll(".cell");
 const startButton = document.getElementById("start");
 const messageArea = document.getElementById("messageArea");
-let message = "";
+let message;
 const letters = ["赤", "青", "緑", "黒"];
 const colors = ["red", "blue", "green", "black"];
 const size = ["large", "mid", "small"];
 let shown = [];
-let rule = "";
+let rule;
 let score = 0;
 let chain = 0;
 let chainRecord = 0;
@@ -50,15 +50,6 @@ function max(a, b) {
   } else {
     return b;
   }
-}
-
-// ランダムにクラスつけるよ
-function addRandomClass(targets, classes) {
-  const randomClasses = shuffle(classes);
-  targets.forEach((target, index) => {
-    target.classList.add(randomClasses[index]);
-    shown.push(randomClasses[index]);
-  });
 }
 
 // 文字表示

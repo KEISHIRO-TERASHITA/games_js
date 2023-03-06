@@ -15,5 +15,4 @@ button.addEventListener("click", function () {
   } else {
     messageArea.innerHTML = messages[4];
   }
-  console.log(omikuji);
 });
