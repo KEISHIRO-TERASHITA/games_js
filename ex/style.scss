@@ -1,0 +1,72 @@
+.header{
+  height: 100px;
+  background-color: #d9d9d9;
+  position: relative;
+  &_logo{
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &_menu{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &_bar{
+      display: block;
+      background-color: black;
+      width: 100%;
+      height: 2px;
+    }
+  }
+}
+
+.main{
+  padding-top: 50px;
+  .gameArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .board{
+      background-color: #000;
+      .cell{
+        height: 40px;
+        width: 40px;
+        background-color: rgb(3, 106, 3);
+        position: relative;
+        &_black::after{
+          content: "";
+          width: 35px;
+          height: 35px;
+          background-color: #000;
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+        &_white::after{
+          content: "";
+          width: 35px;
+          height: 35px;
+          background-color: #fff;
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+      }
+    }
+  }
+}
+
+.no_event{
+  pointer-events: none;
+}
