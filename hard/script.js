@@ -9,22 +9,20 @@ const rules = {
   青: "青という文字",
   緑: "緑という文字",
   黒: "黒という文字",
-  large: "大きい文字",
-  mid: "中間サイズの文字",
-  small: "小さい文字",
 };
 
-let isCorrect = "";
+let isCorrect;
+let randomClasses;
 
 const cells = document.querySelectorAll(".cell");
 const startButton = document.getElementById("start");
 const messageArea = document.getElementById("messageArea");
-let message = "";
+let message;
 const letters = ["赤", "青", "緑", "黒"];
 const colors = ["red", "blue", "green", "black"];
 const size = ["large", "mid", "small"];
 let shown = [];
-let rule = "";
+let rule;
 let score = 0;
 let chain = 0;
 let chainRecord = 0;
@@ -54,15 +52,6 @@ function max(a, b) {
   }
 }
 
-// ランダムにクラスつけるよ
-function addRandomClass(targets, classes) {
-  const randomClasses = shuffle(classes);
-  targets.forEach((target, index) => {
-    target.classList.add(randomClasses[index]);
-    shown.push(randomClasses[index]);
-  });
-}
-
 // 文字表示
 function showLetters() {
   // 表示場所選ぶ
@@ -81,16 +70,23 @@ function showLetters() {
     shown.push(shuffledLetters[index]);
   });
   // クラスつける
-  addRandomClass(targets, colors);
-  addRandomClass(targets, size);
+  randomClasses = shuffle(colors);
+  targets.forEach((target, index) => {
+    target.classList.add(randomClasses[index]);
+    shown.push(randomClasses[index]);
+  });
+  randomClasses = shuffle(size);
+  targets.forEach((target, index) => {
+    target.classList.add(randomClasses[index]);
+  });
+
 }
 
 // 指示だし
 function showRule() {
-  const index = choseFrom(shown);
-  rule = rules[index];
+  isCorrect = choseFrom(shown);
+  rule = rules[isCorrect];
   ruleArea.innerHTML = rule;
-  isCorrect = index;
 }
 
 // リセット
