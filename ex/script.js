@@ -133,6 +133,7 @@ function gameEnd() {
   }
   const message = `黒のスコアは${score_black}点、白のスコアは${score_white}点<br>勝負は${result}！`;
   messageArea.innerHTML = message;
+  board.classList.add("no_event")
 }
 
 // ゲームボードを生成
